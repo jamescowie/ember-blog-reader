@@ -56943,8 +56943,6 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   
 });;App = Ember.Application.create();
 
-console.log('test');
-
 // Cant find another place to put these :(
 App.Router.map(function() {
         this.resource('about');
@@ -56956,7 +56954,7 @@ App.Router.map(function() {
 // handlebar helpers
 Ember.Handlebars.helper('format-date', function(date) {
         return moment(date).fromNow();
-    });
+});
 
 var showdown = new Showdown.converter();
 
