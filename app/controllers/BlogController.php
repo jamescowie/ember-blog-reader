@@ -50,7 +50,17 @@ class BlogController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		// TODO Replace with a valid DB select
+		$data = array(array(
+			'id'      => '1',
+	        'title'   => 'james test',
+	        'author'  => array( 'name' => 'james cowie' ),
+	        'date'    => '12-27-2012',
+	        'excerpt' => 'This is a test post',
+	        'body'    => 'This is more of the body content that should be show'
+		));
+
+		echo json_encode(array('post' => $data));
 	}
 
 	/**
