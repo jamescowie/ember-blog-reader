@@ -11,12 +11,19 @@ class BlogController extends \BaseController {
 	{
 		// craft some JSON here that can be passed back to the front end.
 		$data = array(array(
-			'id'      => '1',
+			'id'      => '0',
 	        'title'   => 'james test',
 	        'author'  => array( 'name' => 'james cowie' ),
 	        'date'    => '12-27-2012',
 	        'excerpt' => 'This is a test post',
 	        'body'    => 'This is more of the body content that should be show'
+		),array(
+			'id'      => '1',
+			'title'   => 'Hello World',
+			'author'  => array( 'name' => 'James Cowie'),
+			'date'    => '18-11-2013',
+			'excerpt' => 'Hello world, this is a test with ember.js and <strong>Laravel</strong>',
+			'body'    => 'this is the remainder of the content that I want to be displayed within the application'
 		));
 
 		echo json_encode(array('posts' => $data));
@@ -50,14 +57,22 @@ class BlogController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		// TODO Replace with a valid DB select
+		$id = Input::get('id');
+
 		$data = array(array(
-			'id'      => '1',
+			'id'      => '0',
 	        'title'   => 'james test',
 	        'author'  => array( 'name' => 'james cowie' ),
 	        'date'    => '12-27-2012',
 	        'excerpt' => 'This is a test post',
 	        'body'    => 'This is more of the body content that should be show'
+		),array(
+			'id'      => '1',
+			'title'   => 'Hello World',
+			'author'  => array( 'name' => 'James Cowie'),
+			'date'    => '18-11-2013',
+			'excerpt' => 'Hello world, this is a test with ember.js and <strong>Laravel</strong>',
+			'body'    => 'this is the remainder of the content that I want to be displayed within the application'
 		));
 
 		echo json_encode(array('post' => $data));
